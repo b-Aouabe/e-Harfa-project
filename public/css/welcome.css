@@ -545,13 +545,3 @@ footer {
 .social__media i:hover{
   color: #f74780;
 }
-p.devloppedBy {
-    font-size: 12px;
-}
-a.devloppedBy {
-    color: #4851ff;
-}
-a.devloppedBy:hover {
-    color: #010cc9;
-}
-

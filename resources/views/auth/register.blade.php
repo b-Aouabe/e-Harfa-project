@@ -1,6 +1,5 @@
 <x-guest-layout>
-    <h1 class="text-center font-semibold text-2xl mb-3 underline">S'inscrire</h1>
-    <form method="POST" action="{{ route('instructor.register') }}">
+    <form method="POST" action="{{ route('register') }}">
         @csrf
 
         <a href='auth/google' class="w-full flex items-center justify-center bg-red-600 rounded py-2 text-white hover:bg-red-500 hover:text-black delay-100"><i class="fa-brands fa-google mr-2"></i> Register by Google</a>
@@ -60,8 +59,8 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <a class="underline text-sm text-gray-600 ml-2 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('instructor.register') }}">
-                {!!  __('Register as an <span class="text-blue-500 font-semibold">Instructor</span>') !!}
+            <a class="underline text-sm text-gray-600 ml-2 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+                {{ __('Register as an Instructor') }}
             </a>
 
             <x-primary-button class="ms-4">

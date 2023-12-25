@@ -43,26 +43,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
-    //defining eloquent relationships:
-    public function achievements () {
-        $this->hasMany(Achievement::class);
-    }
-
-    public function enrollements () {
-        $this->hasMany(Enrollement::class);
-    }
-
-    public function courseReviews () {
-        $this->hasMany(CourseReview::class);
-    }
-
-    public function achievementReviews () {
-        $this->hasMany(AchievementReview::class);
-    }
-
-    public function instructor () {
-        $this->hasOne(Instructor::class);
-    }
-
 }

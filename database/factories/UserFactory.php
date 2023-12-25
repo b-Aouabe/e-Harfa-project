@@ -23,23 +23,12 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        $roles = ['student', 'instructor'];
         return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            'phone' => $this->faker->unique()->phoneNumber,
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => bcrypt('password'), // Default password for all users
-            'social_id' => null, // You can customize this based on your requirements
-            'social_type' => null, // You can customize this based on your requirements
-            'role' => $this->faker->randomElement($roles),
-            'avatar' => null, // You can customize this based on your requirements
-            'bio' => $this->faker->paragraph,
-            'completed_courses' => $this->faker->numberBetween(0, 10),
+            'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
-            'created_at' => now(),
-            'updated_at' => now(),
-//            'password' => static::$password ??= Hash::make('password'),
         ];
     }
 

@@ -122,7 +122,7 @@
                 <a href="https://instagram.com/aouabeboubaker"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <p class="devloppedBy">By <a class="devloppedBy" target="_blank" href="https://aouabe-boubker.vercel.app/">AOUABE Boubker</a></p>
+        <p>By <a target="_blank" href="https://aouabe-boubker.vercel.app/">AOUABE Boubker</a></p>
         <a href="/register" class="footer__get-started btn btn-mag-blue">Get Started</a>
         </div>
     </footer>

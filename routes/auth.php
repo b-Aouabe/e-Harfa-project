@@ -10,7 +10,6 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\SocialiteController;
-use App\Http\Controllers\InstructorController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -42,10 +41,6 @@ Route::middleware('guest')->group(function () {
 
     Route::get('auth/facebook', [SocialiteController::class, 'redirectToFacebook']);
     Route::get('auth/facebook/callback', [SocialiteController::class, 'handleFacebookCallBack']);
-
-    //Instructor
-    Route::get('/instructor-register', [InstructorController::class, 'create'])->name('instructor.register');
-    Route::post('/instructor-register', [InstructorController::class, 'store'])->name('instructor.register');
 });
 
 Route::middleware('auth')->group(function () {
