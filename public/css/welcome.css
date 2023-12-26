@@ -545,3 +545,13 @@ footer {
 .social__media i:hover{
   color: #f74780;
 }
+
+footer .developper {
+    font-size: small;
+    color: cornflowerblue;
+    transition: color ease-out .5s;
+}
+
+footer .developper:hover {
+    color: #4851ff;
+}

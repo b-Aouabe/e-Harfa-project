@@ -113,17 +113,17 @@
     <!-- Footer -->
     <footer>
         <div class="footer__container container">
-        <div>
-            <a href="/" class="logo-light">
-                <h1>e-Harfa</h1>
-            </a>
-            <div class="social__media">
-                <a href="https://instagram.com/aouabeboubaker"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com/aouabeboubaker"><i class="fab fa-instagram"></i></a>
+            <div>
+                <a href="/" class="logo-light">
+                    <h1>e-Harfa</h1>
+                </a>
+                <div class="social__media">
+                    <a href="https://instagram.com/aouabeboubaker"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/aouabeboubaker"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-        </div>
-        <p>By <a target="_blank" href="https://aouabe-boubker.vercel.app/">AOUABE Boubker</a></p>
-        <a href="/register" class="footer__get-started btn btn-mag-blue">Get Started</a>
+            <p>By <a class="developper" target="_blank" href="https://aouabe-boubker.vercel.app/">AOUABE Boubker</a></p>
+            <a href="/register" class="footer__get-started btn btn-mag-blue">Get Started</a>
         </div>
     </footer>
 </body>
