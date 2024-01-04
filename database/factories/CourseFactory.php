@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Models\Instructor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +18,14 @@ class CourseFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
-            //
+            'instructor_id' => Instructor::factory(),
+            'category_id' => Category::factory(),
+            'title' => fake()->sentence(),
+            'excerpt' => fake()->paragraph(),
+            'body' => '<p>' . implode('</p><p>', fake()->paragraphs(6)) . '</p>',
+
         ];
     }
 }

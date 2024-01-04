@@ -11,8 +11,8 @@ class Enrollement extends Model
 
 
     //define relationships:
-    public function student () {
-        return $this->belongsTo(User::class);
+    public function user () {
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function course () {

@@ -10,7 +10,8 @@ class Instructor extends Model
     use HasFactory;
 
     //define relationships
-    public function user () {
+    public function user (): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
 

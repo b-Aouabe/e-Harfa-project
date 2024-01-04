@@ -25,34 +25,7 @@ Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/dashboard', function () {
 
-    // Define the 'page' object
-    class Page
-    {
-        public $language;
-        private $url;
-        public $title;
-        public $description ;
-
-        public function __construct($language, $url, $title, $description)
-        {
-            $this->language = $language;
-            $this->url = $url;
-            $this->title = $title;
-            $this->description = $description;
-        }
-
-        public function getUrl()
-        {
-            return url($this->url);
-        }
-    }
-
-    return view('dashboard.index', [
-        'page' => new Page('en', '/dashboard', 'Dashboard', 'This is the dashboard page.')
-    ]);
-});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

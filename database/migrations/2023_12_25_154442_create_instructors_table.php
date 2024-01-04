@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('job');
-            $table->string('address');
             $table->string('highest_degree_attained');
             $table->string('field_of_study');
             $table->text('teaching_exp');

@@ -16,8 +16,13 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
+        /*
+         $table->id();
+            $table->string('title');
+            $table->timestamps();
+         */
         return [
-            //
+            'title' => fake()->sentence(),
         ];
     }
 }
