@@ -10,11 +10,14 @@ use App\Models\CourseSection;
 use App\Models\Quiz;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Hamcrest\Core\Set;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Collection;
 
 class QuizResource extends Resource
 {
@@ -28,27 +31,29 @@ class QuizResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('courseId')
+                Forms\Components\Select::make('course_id')
                     ->label('Course')
                     ->placeholder("Select a course")
                     ->options(Course::all()->pluck('title', 'id')->toArray())
-                    ->afterStateUpdated(fn(callable $set) => $set('courseSection', null))
-                    ->reactive()
+                    ->afterStateUpdated(fn(callable $set) => $set('course_section_id', null))
+                    ->live()
                     ->searchable()
                     ->preload()
                     ->required(),
-                Forms\Components\Select::make('courseSection')
+                Forms\Components\Select::make('course_section_id')
                     ->label('Section')
-                    ->options(function (callable $get) {
-                        $course = Course::find($get('courseId'));
+                    ->options(function (callable $get) : Collection {
+
+                        $course = Course::find($get('course_id'));
 
                         if(! $course){
-                            return CourseSection::all()->pluck('title', 'id');
+                            return Collection::empty();
                         }
                         return $course->sections->pluck('title', 'id');
                     })
                     ->searchable()
                     ->preload()
+                    ->live()
                     ->required(),
                 Forms\Components\TextInput::make('title')
                     ->required()
